@@ -1,0 +1,197 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #101838;
+    color: #f8f8f8;
+  }
+  
+  header {
+    position: sticky;
+    top: 0;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #101838;
+    color: #fff;
+    position: relative;
+    height: 80px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Logo & Brand Name */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+  
+  .brand-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #50E3C2;
+  }
+  
+  /* Navbar Links */
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
+  /* Active Tab Highlight */
+  .nav-links a.active,
+  .nav-links a:hover {
+    background-color: #50E3C2;
+    color: #101838;
+    border-radius: 5px;
+  }
+  
+/* Burger Menu Button */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger div {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 6px;
+    transition: 0.3s;
+  }
+.contact-container {
+    display: flex;
+    width: 90%;
+    max-width: 90%;
+    background: #1e295f;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px;
+}
+.contact-info {
+    flex: 1;
+    padding: 20px;
+}
+.contact-info h2 {
+    margin-bottom: 10px;
+}
+.contact-info p {
+    margin: 10px 0;
+}
+.contact-info i {
+    margin-right: 10px;
+    color: #00bcd4;
+}
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    margin: 10px;
+}
+.contact-form h3 {
+    margin-bottom: 15px;
+}
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #3820d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #0097a7;
+}
+
+/* footer {
+    text-align: left;
+    padding: 0.5rem ;
+    background-color: #4A90E2;
+    color: #fff;
+    font-size: 0.9rem;
+} */
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #101838;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .about-image img {
+        max-width: 80%;
+    }
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+  
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #101838;
+        padding: 10px 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
+  
+    .nav-links.show {
+        display: flex;
+    }
+  
+    .nav-links li {
+        margin: 10px 0;
+    }
+  }

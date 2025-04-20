@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDEASE: AI-Powered Mental Health Therapist</title>
+<link href="assets/css/login.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<div class="logo-container">
+<img alt="MindEase Logo" class="logo" src="assets/image/logo.jpg"/>
+<span class="brand-name">MINDEASE</span>
+</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a class="active" href="login.html">Login</a></li>
+</ul>
+<div class="burger">
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+</div>
+</nav>
+</header>
+<main class="login-container">
+
+<form action="http://localhost:5000/login" method="POST" class="login-box" id="authBox">
+<h2 id="formTitle">Login to MindEase</h2>
+<div class="input-group">
+<label for="email">Email</label>
+<input id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+</div>
+<div class="input-group">
+<label for="password">Password</label>
+<input id="password" name="password" placeholder="Enter your password" required="" type="password"/>
+</div>
+<div class="input-group" id="signupName" style="display: none;">
+<label for="name">Name</label>
+<input id="name" name="name" placeholder="Enter your name" type="text"/>
+</div>
+<button class="login-btn" id="formButton" type="submit">Login</button>
+<p class="signup-link" id="toggleText">Don't have an account? <a href="#" id="toggleForm">Sign up</a></p>
+</form>
+
+</main>
+<footer>
+<p>© 2025 MINDEASE. All rights reserved.</p>
+</footer>
+<script>
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+  const toggleLink = document.getElementById('toggleForm');
+  const formTitle = document.getElementById('formTitle');
+  const formButton = document.getElementById('formButton');
+  const signupName = document.getElementById('signupName');
+  let isSignup = false;
+
+  toggleLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  isSignup = !isSignup;
+
+  if (isSignup) {
+    formTitle.innerText = 'Create an Account';
+    formButton.innerText = 'Sign Up';
+    signupName.style.display = 'block';
+    toggleText.innerHTML = 'Do you have an account? <a href="#" id="toggleForm">Login</a>';
+  } else {
+    formTitle.innerText = 'Login to MindEase';
+    formButton.innerText = 'Login';
+    signupName.style.display = 'none';
+    toggleText.innerHTML = 'Don\'t have an account? <a href="#" id="toggleForm">Sign up</a>';
+  }
+
+  // Re-bind the click to the newly injected link
+  document.getElementById('toggleForm').addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleLink.click();
+  });
+});
+
+</script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const error = params.get("error");
+  const message = params.get("message");
+
+  if (error) {
+    alert(decodeURIComponent(error));
+  }
+  if (message === "signup-success") {
+    alert("Signup successful! You are now logged in.");
+  } else if (message === "login-success") {
+    alert("Login successful! Welcome back.");
+  }
+</script>
+
+
+<script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/03/07/07/20250307072133-KUHSA8PE.js"></script>
+</body>
+</html>
